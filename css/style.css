@@ -29,25 +29,72 @@ header{
 
 .logo{
     color: white;
-    font-size: 29px;
- }
+    font-size: 22px;
+}
 
- .nav-links{
+.logo h1{
+    white-space: nowrap;
+}
+
+.nav-links{
     display: flex;
     list-style: none;
     gap: 32px;
- }
+    align-items: center;
+}
 
- .nav-links a{
+.nav-links a{
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
- }
+}
 
- .nav-links a:hover{
+.nav-links a:hover{
     color: #030e1a;
- }
+}
+
+.nav-links li:last-child{
+    position: relative;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cart-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.cart-icon i {
+    font-size: 28px;
+    color: white;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: white;
+    color: #ff6b35;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+ 
 
 .hero{
     background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
@@ -238,6 +285,34 @@ footer{
     border-top: 1px solid white;
 }
 
+.toast {
+    visibility: hidden; /* Oculto por defecto */
+    min-width: 250px;
+    background-color: #ff7403; 
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed; /* Se mantiene fijo en la pantalla */
+    z-index: 2000; /* Siempre encima */
+    top: 80px; /* Debajo del navbar */
+    right: 5%; /* Alineado a la derecha */
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    opacity: 0; /* Transparente */
+    transform: translateY(-20px); /* Posición inicial arriba */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.toast.show {
+    opacity: 1; /* Visible */
+    transform: translateY(0);
+    visibility: visible;
+ 
+
+}
+
 /* responsive*/
 
 /*Pantallas  menores a 768px */
@@ -317,6 +392,8 @@ footer{
     .footer-content{
         gap: 1.5rem;
     }
+
+    
     
 
 }
